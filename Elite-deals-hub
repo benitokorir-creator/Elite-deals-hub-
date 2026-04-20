@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elite Deals App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #0d0d0d;
+      color: gold;
+      text-align: center;
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    button {
+      padding: 15px;
+      margin: 10px;
+      width: 80%;
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🔥 Elite Deals Hub</h1>
+
+<p>Jobs • Hustles • CV Services • Deals</p>
+
+<input id="phone" placeholder="Enter your number" style="padding:10px;width:80%;">
+
+<br><br>
+
+<button onclick="order('CV Service - KSh 200')">📄 Get CV</button>
+<button onclick="order('Job Alerts')">💼 Get Jobs</button>
+<button onclick="order('Hustle Ideas')">💡 Hustles</button>
+<button onclick="order('Fashion Deals')">🛍 Deals</button>
+
+<script>
+function order(product) {
+  let phone = document.getElementById("phone").value || "No number";
+
+  let message = `Hello, I want ${product}.
+My number: ${phone}`;
+
+  let url = `https://wa.me/254792091769?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
